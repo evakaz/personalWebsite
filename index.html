@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Evodka</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div v-bind:class="vueClass">
+      {{ message }}
+      <p v-if="is_true > 50">on haige progeja.</p>
+      <p v-else>vihkab mehi.</p>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "Eva",
+          vueClass: "pinkBG",
+          is_true: Math.ceil(Math.random() * 100)
+        }
+      }
+    })
+  
+   app.mount('#app')
+  
+  </script>
+</body>
+</html>
